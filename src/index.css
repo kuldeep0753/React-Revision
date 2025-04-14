@@ -1,37 +1,35 @@
-/* General styles for the restaurant container */
+
+
+/* General styles for the restaurant container 
 .restaurant-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background for the app */
+    background-color: #f4f4f4; Light background for the app
     padding: 20px;
   }
   
-  /* Header styling */
-  .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 1200px;
-    padding: 15px 20px;
-    background-color: #333; /* Dark background for the header */
-    color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-  }
+    Login Button
 
-
+    .toggleBtn{
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
   
-  /* Restaurant image */
+  Restaurant image
   .restro-image img {
     height: 50px;
     width: auto;
   }
   
-  /* Navbar links */
+  Navbar links
   .nav-link ul {
     list-style: none;
     display: flex;
@@ -47,10 +45,10 @@
   }
   
   .nav-link li:hover {
-    color: #f39c12; /* Highlight on hover */
+    color: #f39c12; Highlight on hover
   }
   
-  /* Body container */
+  Body container
   .body {
     display: flex;
     flex-direction: column;
@@ -60,7 +58,7 @@
     gap: 20px;
   }
   
-  /* Search box styling */
+  Search box styling
   .search-box {
     width: 100%;
     max-width: 800px;
@@ -72,7 +70,7 @@
     background-color: #fff;
   }
   
-  /* Restaurant card container */
+  Restaurant card container
   .restaurant-card {
     display: flex;
     justify-content: center;
@@ -81,7 +79,7 @@
     width: 100%;
   }
   
-  /* Restaurant card details */
+  Restaurant card details
   .card-details {
     width: 300px;
     background-color: white;
@@ -150,21 +148,59 @@
     margin: 20px;
   }
 
-  .filter-btn {
-    background-color: #4caf50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
+  .search-btn,.filter-btn {
+    background-color: #4caf50; Green background
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
   }
 
-  .filter-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+  .search-btn,.filter-btn:hover {
+    background-color: #45a049; 
   }
 
-  .filter-btn:active {
-    transform: scale(0.95); /* Slightly shrink on click */
+  .search-btn,.filter-btn:active {
+    transform: scale(0.95); 
   }
+
+  .search-container{
+    margin-right: 20px;
+  } 
+
+  .item-input{
+    padding: 5px 12px;
+    border-radius: 10px;
+    width: 530px;
+    height: 30px;
+    font-size: larger;
+    font-family: math;
+    font-weight: 500;
+    } 
+     /* .search-btn{
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  } 
+
+
+  
+.loading{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.boxes{
+  width: 100px;
+  height: auto;
+}
+  */

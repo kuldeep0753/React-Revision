@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"; // Importing Link for client-side navig
 // Functional component to display restaurant details
 export const RestaurantCard = (props) => {
   // Destructuring props to extract restaurant data
-  const { resData } = props; 
+  const { resData } = props;
 
   // Further destructuring to extract specific fields from restaurant data
   const {
@@ -20,13 +20,17 @@ export const RestaurantCard = (props) => {
   return (
     <>
       {/* Restaurant details container */}
-      <div className="card-details">
+      <div className="w-64 p-4 bg-white rounded-xl shadow-md hover:scale-105 transition-transform duration-200">
         {/* Displaying restaurant image */}
-        <img src={CARD_LOGO + cloudinaryImageId} alt="not load" />
+        <img
+          src={CARD_LOGO + cloudinaryImageId}
+          alt="not load"
+          className="w-full h-40 object-cover rounded-md"
+        />
 
         {/* Displaying discount info */}
         <p
-          className="offer"
+          className="text-sm text-red-500 font-semibold mt-2 flex justify-center items-center"
           style={{
             display: "flex", // Flexbox for alignment
             justifyContent: "center", // Center align horizontally
@@ -35,7 +39,7 @@ export const RestaurantCard = (props) => {
         >
           {/* Discount header */}
           {aggregatedDiscountInfoV3?.header}
-          <span style={{ paddingLeft: "5px" }}>
+          <span className="pl-1">
             {/* Display subHeader if available, else show fallback text */}
             {aggregatedDiscountInfoV3?.subHeader?.trim() ||
               "No Discount Available"}
@@ -43,19 +47,21 @@ export const RestaurantCard = (props) => {
         </p>
 
         {/* Display restaurant name */}
-        <b className="restaurant-name">{name}</b>
+        <b className="block text-lg mt-1 font-bold restaurant-name">{name}</b>
 
         {/* Display rating and delivery time */}
-        <b className="rating">
+        <b className="block text-sm text-gray-700 mt-1 rating">
           Rating: {avgRatingString}
-          <span className="time">{sla.deliveryTime}min</span>
+          <span className="ml-2 text-gray-500 time">{sla.deliveryTime}min</span>
         </b>
 
         {/* Display cuisines */}
-        <b className="dishes-name">{cuisines.join(" ,")}</b>
+        <b className="block text-sm text-gray-600 mt-1 dishes-name">
+          {cuisines.join(" ,")}
+        </b>
 
         {/* Display locality/address */}
-        <p className="address">{locality}</p>
+        <p className="text-sm text-gray-500 mt-1 address">{locality}</p>
       </div>
     </>
   );

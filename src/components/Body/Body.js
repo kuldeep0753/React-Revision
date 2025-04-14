@@ -24,8 +24,7 @@ const Body = () => {
       const data = await fetch(RESTAURANT_API);
       const json = await data.json();
       const allRestaurantCard =
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants || [];
+        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
       // Update state with fetched restaurant data
       setListOfRestaurant(allRestaurantCard);
@@ -51,50 +50,55 @@ const Body = () => {
     setListOfRestaurant(topRatedRestaurants);
   };
 
-  // Render loading shimmer if data is not yet available
+  if (onlineStatus === false) {
+    return (
+      <h1 className="text-center text-red-600 text-2xl mt-10">
+        Looks like you lost internet connection
+      </h1>
+    );
+  }
+// Render loading shimmer if data is not yet available
   if (listOfRestaurant.length === 0) {
     return <Shimmer />;
   }
 
-  if(onlineStatus === false){
-    return (<>
-    <h1>
-      Looks like you lost internet Connection
-    </h1>
-    </>)
-  }
-
   return (
-    <div className="body">
-      <div className="filter">
-        {/* Search Functionality */}
-        <div className="search-container">
+    <div className="p-4">
+      {/* Filter Section */}
+      <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-6">
+        {/* Search */}
+        <div className="flex items-center gap-2">
           <input
             type="text"
             placeholder="Search Item"
-            className="item-input"
+            className="border border-gray-300 rounded px-4 py-2 w-64"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
           />
-          <button className="search-btn" onClick={handleSearch}>
+          <button
+            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition"
+            onClick={handleSearch}
+          >
             SEARCH
           </button>
         </div>
 
         {/* Top Rated Filter */}
-        <div className="filter-top-rated">
-          <button className="filter-btn" onClick={handleTopRated}>
+        <div>
+          <button
+            className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+            onClick={handleTopRated}
+          >
             TOP RATED
           </button>
         </div>
       </div>
 
-      {/* Render restaurant cards */}
-      <div className="restaurant-card">
+      {/* Restaurant Cards */}
+      <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {listOfRestaurant.map((rescard) => (
-          <Link to={"/restaurant/" + rescard.info.id} key={rescard.info.id}>
-            <RestaurantCard resData={rescard.info}  />
-            {/* {console.log(rescard)} */}
+          <Link to={`/restaurant/${rescard.info.id}`} key={rescard.info.id}>
+            <RestaurantCard resData={rescard.info} />
           </Link>
         ))}
       </div>

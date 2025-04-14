@@ -1,16 +1,14 @@
-/* General styles for the restaurant container */
+/* General styles for the restaurant container 
 .restaurant-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4; /* Light background for the app */
+    background-color: #f4f4f4; 
     padding: 20px;
   }
   
  
-
-    /* Login Button */
 
     .toggleBtn{
       background-color: #4caf50;
@@ -23,13 +21,11 @@
       transition: background-color 0.3s ease;
     }
   
-  /* Restaurant image */
   .restro-image img {
     height: 50px;
     width: auto;
   }
   
-  /* Navbar links */
   .nav-link ul {
     list-style: none;
     display: flex;
@@ -45,10 +41,9 @@
   }
   
   .nav-link li:hover {
-    color: #f39c12; /* Highlight on hover */
+    color: #f39c12; 
   }
   
-  /* Body container */
   .body {
     display: flex;
     flex-direction: column;
@@ -58,7 +53,6 @@
     gap: 20px;
   }
   
-  /* Search box styling */
   .search-box {
     width: 100%;
     max-width: 800px;
@@ -70,7 +64,6 @@
     background-color: #fff;
   }
   
-  /* Restaurant card container */
   .restaurant-card {
     display: flex;
     justify-content: center;
@@ -79,7 +72,6 @@
     width: 100%;
   }
   
-  /* Restaurant card details */
   .card-details {
     width: 300px;
     background-color: white;
@@ -149,22 +141,22 @@
   }
 
   .search-btn,.filter-btn {
-    background-color: #4caf50; /* Green background */
-    color: white; /* White text */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Rounded corners */
-    padding: 10px 20px; /* Padding */
-    font-size: 16px; /* Font size */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #4caf50;
+    color: white;
+    border: none; 
+    border-radius: 5px;
+    padding: 10px 20px; 
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease;
   }
 
   .search-btn,.filter-btn:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: #45a049; 
   }
 
   .search-btn,.filter-btn:active {
-    transform: scale(0.95); /* Slightly shrink on click */
+    transform: scale(0.95);
   }
 
   .search-container{
@@ -180,7 +172,7 @@
     font-family: math;
     font-weight: 500;
     } 
-     /* .search-btn{
+     .search-btn{
     background-color: #4caf50;
     color: white;
     border: none;
@@ -190,8 +182,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-left: 10px;
-  } */
-
+  } 
 
   
 .loading{
@@ -202,4 +193,4 @@
 .boxes{
   width: 100px;
   height: auto;
-}
+}*/

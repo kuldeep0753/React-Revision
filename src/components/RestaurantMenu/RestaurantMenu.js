@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react"; // Importing hooks to manage state and side effects
-import { CUISINES_LOGO } from "../../utils/constants"; // Importing constants (like image base URL)
-import { Shimmer } from "../Shimmer/Shimmer"; // Importing Shimmer component to show loading UI
+import { CUISINES_LOGO } from "../../utils/constants";
+import { Shimmer } from "../Shimmer/Shimmer";
 import { useParams } from "react-router-dom"; // To get dynamic params from URL
 import useRestaurantMenu from "../../utils/useRestaurantMenu.js"; // Custom hook to fetch restaurant data
-import "./RestaurantMenu.css"; // Importing styling
 
 const RestaurantMenu = () => {
   // Getting restaurant ID from the route parameters
@@ -33,27 +31,36 @@ const RestaurantMenu = () => {
   const restaurantName = restaurantItemList[0]?.card?.card?.text;
   console.log(restaurantName); // Logging restaurant name
 
-    // console.log("2");
+  // console.log("2");
 
   // Show loading shimmer if data is not yet available
   if (restaurantItemList === null) return <Shimmer />;
 
   // Rendering restaurant name and menu
   return (
-    <div className="cuisine-container">
-       {/* {console.log("5")} */}
-      <h1 className="restro-name">{restaurantName}</h1> {/* Display restaurant name */}
-      <h2 className="menu-title">Menu</h2>
-      <ul className="menu-list">
+    <div className="max-w-4xl mx-auto p-4">
+      {" "}
+      {/* {console.log("5")} */}
+      <h1 className="text-3xl font-bold mb-4 text-center">{restaurantName}</h1>
+      <h2 className="text-2xl font-semibold mb-4 border-b pb-2">Menu</h2>
+      <ul className="space-y-6">
+        {" "}
         {/* Loop through each menu item and render */}
         {arrayItem?.map((res, index) => (
-          <div key={index} className="menu-item">
-            <li className="menu-item-name">{res?.card?.info?.name}</li>
-            <img
-              src={CUISINES_LOGO + res?.card?.info?.imageId} // Construct full image URL
-              alt={res?.card?.info?.name}
-              className="menu-item-image"
-            />
+          <div
+            key={index}
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white shadow-md p-4 rounded-lg"
+          >
+            <li className="text-lg font-medium list-none flex-1">
+              {res?.card?.info?.name}
+            </li>
+            {res?.card?.info?.imageId && (
+              <img
+                src={CUISINES_LOGO + res.card.info.imageId}
+                alt={res.card.info.name}
+                className="w-24 h-24 object-cover rounded-md"
+              />
+            )}
           </div>
         ))}
       </ul>

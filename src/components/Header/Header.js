@@ -1,7 +1,6 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect } from "react";
 import { LOGO_LINK } from "../../utils/constants";
 import { Link } from "react-router-dom";
-import "./Header.css";
 import useOnlineStatus from "../../utils/useOnlineStatus";
 
 
@@ -20,22 +19,29 @@ export  const Header = () => {
   const handleLoginBtn = ()=>{
     toggleBtn == "Log In"? setToggleBtn("Log Out"): setToggleBtn("Log In");
   }
-    return (
-      <div className="header">
-        <div className="restro-image">
-          <img src={LOGO_LINK} alt="not loading" />
-        </div>
-        <div className="nav-link">
-          <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About</Link></li>            
-            <li><Link to="/form">Form</Link></li>            
-            <li><Link to="/">🧑‍🦲Sign In</Link></li>
-            <li><Link to="/grocery">Grocery🍰</Link></li>
-            <li><Link to="/">Staus:{onlineStatus?"🟢":"🔴"}</Link></li>
-            <li><button className="toggleBtn" onClick={handleLoginBtn}>{toggleBtn}</button></li>
-          </ul>
-        </div>
+  return (
+    <div className="flex justify-between items-center p-4 bg-gray-100 shadow-md">
+      <div className="w-24">
+        <img src={LOGO_LINK} alt="Logo" className="w-full h-auto" />
       </div>
-    );
-  };
+      <nav>
+        <ul className="flex gap-6 items-center text-lg font-medium">
+          <li><Link to="/" className="hover:text-blue-600">Home</Link></li>
+          <li><Link to="/about" className="hover:text-blue-600">About</Link></li>
+          <li><Link to="/form" className="hover:text-blue-600">Form</Link></li>
+          <li><Link to="/" className="hover:text-blue-600">🧑‍🦲Sign In</Link></li>
+          <li><Link to="/grocery" className="hover:text-blue-600">Grocery🍰</Link></li>
+          <li>Status: {onlineStatus ? "🟢" : "🔴"}</li>
+          <li>
+            <button
+              className="bg-blue-500 text-white px-4 py-1 rounded hover:bg-blue-600 transition"
+              onClick={handleLoginBtn}
+            >
+              {toggleBtn}
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  );
+};
