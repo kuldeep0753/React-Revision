@@ -24,3 +24,7 @@ React Hooks:
     Normal JS utility function
     useState()
     useEffect()
+
+
+    Tailwind installation process:
+    
